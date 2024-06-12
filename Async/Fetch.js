@@ -1,3 +1,4 @@
+let carrello = [];
 const fetchObj = () => {
   fetch("https://striveschool-api.herokuapp.com/books")
     .then((response) => {
@@ -55,6 +56,13 @@ const fetchObj = () => {
 
         buttonRed.addEventListener("click", () => {
           card.classList.add("d-none");
+        });
+
+        buttonAdd.addEventListener("click", () => {
+          const carrello = document.getElementById("Carrello");
+          const libro = document.createElement("div");
+          libro.innerText = book.title;
+          carrello.appendChild(libro);
         });
       });
     })
